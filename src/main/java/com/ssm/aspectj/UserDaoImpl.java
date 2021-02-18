@@ -5,6 +5,9 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository("userDao")
 public class UserDaoImpl implements UserDao {
@@ -59,6 +62,13 @@ public class UserDaoImpl implements UserDao {
         String sql ="select * from spring_user where id = ?";
         RowMapper<User> rowMapper = new BeanPropertyRowMapper(User.class);
         return this.jdbcTemlate.queryForObject(sql,rowMapper,id);
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.DEFAULT,readOnly = false)
+    public void transfer(String outUser, String inUser, Integer jf) {
+        this.jdbcTemlate.update("UPDATE spring_user set jf=jf+? WHERE username=?",jf,inUser);
+
+        this.jdbcTemlate.update("UPDATE spring_user set jf=jf-? WHERE username=?",jf,outUser);
     }
 
 }

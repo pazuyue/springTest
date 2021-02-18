@@ -13,4 +13,6 @@ public interface UserDao {
     /*通过ID查询*/
     public User findUserById(int id);
 
+    public void transfer(String outUser,String inUser,Integer jf);
+
 }

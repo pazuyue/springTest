@@ -4,6 +4,15 @@ public class User {
     private Integer id;
     private String username;
     private String password;
+    private Integer jf;
+
+    public Integer getJf() {
+        return jf;
+    }
+
+    public void setJf(Integer jf) {
+        this.jf = jf;
+    }
 
     public Integer getId() {
         return id;

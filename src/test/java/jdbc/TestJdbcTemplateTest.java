@@ -36,4 +36,10 @@ public class TestJdbcTemplateTest {
         User user = userDao.findUserById(1);
         System.out.println(user);
     }
+
+    @Test
+    public void  annotationTest(){
+        userDao.transfer("yueguangMan-One","yueguangMan-Two",50);
+        System.out.println("积分赠送成功");
+    }
 }
