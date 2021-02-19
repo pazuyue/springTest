@@ -4,15 +4,9 @@ public class User {
     private Integer id;
     private String username;
     private String password;
+    private String jobs;
+    private String phone;
     private Integer jf;
-
-    public Integer getJf() {
-        return jf;
-    }
-
-    public void setJf(Integer jf) {
-        this.jf = jf;
-    }
 
     public Integer getId() {
         return id;
@@ -38,12 +32,39 @@ public class User {
         this.password = password;
     }
 
+    public String getJobs() {
+        return jobs;
+    }
+
+    public void setJobs(String jobs) {
+        this.jobs = jobs;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Integer getJf() {
+        return jf;
+    }
+
+    public void setJf(Integer jf) {
+        this.jf = jf;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", jobs='" + jobs + '\'' +
+                ", phone='" + phone + '\'' +
+                ", jf=" + jf +
                 '}';
     }
 }
