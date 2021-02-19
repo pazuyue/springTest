@@ -13,7 +13,7 @@ public class TestJdbcTemplateTest {
 
     @Before
     public void init(){
-        this.applicationContext =  new ClassPathXmlApplicationContext("applicationContext3.xml");
+        this.applicationContext =  new ClassPathXmlApplicationContext("applicationContext.xml");
         this.userDao = (UserDao) applicationContext.getBean("userDao");
     }
 
