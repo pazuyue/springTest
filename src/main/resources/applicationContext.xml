@@ -51,8 +51,21 @@
     </bean>
 
 
+    <bean id="profile" class="com.ssm.aspectj.controller.Profile"/>
+
+    <!-- Definition for student1 bean -->
+    <bean id="student1" class="com.ssm.aspectj.Model.Student">
+        <property name="name"  value="Zara" />
+        <property name="age"  value="11"/>
+    </bean>
+
+    <!-- Definition for student2 bean -->
+    <bean id="student2" class="com.ssm.aspectj.Model.Student">
+        <property name="name"  value="Nuha" />
+        <property name="age"  value="2"/>
+    </bean>
 
 
-   <context:component-scan base-package="com.ssm.aspectj"/>
-    <aop:aspectj-autoproxy/>
+   <!--<context:component-scan base-package="com.ssm.aspectj"/>
+    <aop:aspectj-autoproxy/>-->
 </beans>
