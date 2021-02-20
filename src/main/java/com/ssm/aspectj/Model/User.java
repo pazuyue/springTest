@@ -56,7 +56,7 @@ public class User {
         this.jf = jf;
     }
 
-   /* @Override
+    @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
@@ -66,5 +66,5 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", jf=" + jf +
                 '}';
-    }*/
+    }
 }

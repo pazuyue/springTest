@@ -20,14 +20,14 @@ public class MyAspect {
     public void myBefore(JoinPoint joinPoint){
         System.out.println("前置通知，模拟执行权限检查");
         System.out.println("目标类是："+joinPoint.getTarget());
-        System.out.println(",被植入增强处理的目标方法为："+joinPoint.getSignature().getName());
+        System.out.println("前置通知,被植入增强处理的目标方法为："+joinPoint.getSignature().getName());
     }
 
     //后置通知
     @AfterReturning(value = "myPointCut()",returning ="returnVal" )
-    public void myAfterReturning(JoinPoint joinPoint,String returnVal){
+    public void myAfterReturning(JoinPoint joinPoint,Object returnVal){
         System.out.println("后置通知：模拟记录日记..."+returnVal);
-        System.out.println("被植入增强处理的目标为："+joinPoint.getSignature().getName());
+        System.out.println("后置通知,被植入增强处理的目标为："+joinPoint.getSignature().getName());
     }
 
     /**
